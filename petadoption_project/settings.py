@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_hby^8ja+*tg5ah^vwk5@4(+$b-#uf6rvhjq2sz%qh#q+y-e5u'
+SECRET_KEY ='_hby^8ja+*tg5ah^vwk5@4(+$b-#uf6rvhjq2sz%qh#q+y-e5u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,11 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     #Third-aprty apps
     'crispy_forms',
+    'allauth',
+    'allauth.account',
     #local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'animals.apps.AnimalsConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,5 +141,27 @@ STATICFILES_FINDERS = [
 
 AUTH_USER_MODEL = 'users.CustomUser' 
 LOGIN_REDIRECT_URL='home'
-LOGOUT_REDIRECT_URL='home'
+ACCOUNT_LOGOUT_REDIRECT='home'
 CRISPY_TEMPLATE_PACK='bootstrap4'
+#django-allauth config
+SITE_ID=1
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_EMAIL_REQUIRED = True 
+ACCOUNT_UNIQUE_EMAIL = True 
+#ACCOUNT_CONFIRM_EMAIL_ON_GET=True
+AUTHENTICATION_BACKENDS = (
+'django.contrib.auth.backends.ModelBackend', 
+'allauth.account.auth_backends.AuthenticationBackend', 
+)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+#EMAIL_HOST='smtp.gmail.com'
+#EMAIL_USE_TLS=True
+#EMAIL_PORT=587
+#MAIL_HOST_USER='mwangedennis05@gmail.com'
+#EMAIL_HOST_PASSWORD='hnsy gksw ukce utwn'
+#DEFAULT_FROM_EMAIL = 'admin@petadoption.com'
+
+#media config
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')

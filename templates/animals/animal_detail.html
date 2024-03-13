@@ -1,0 +1,24 @@
+
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+
+{% block content %}
+<div class="animal-detail">
+    <img class="card-img-top img-fluid" src="{{ animal.animalimage.url }}" alt="{{ animal.title }}">
+    <div class="animal-details">
+        <h2><a href="">{{ animal.title }}</a></h2>
+        <p class="detail-label">Breed:</p>
+        <p>{{ animal.breed }}</p>
+        <p class="detail-label">Sex:</p>
+        <p>{{ animal.sex }}</p>
+        <p class="detail-label">Age:</p>
+        <p>{{ animal.age }}</p>
+        <p class="detail-label">Description:</p>
+        <p>{{ animal.description }}</p>
+    </div>
+</div>
+{% endblock content %}
+

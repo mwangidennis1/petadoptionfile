@@ -3,6 +3,7 @@ services:
    web:
     build: . 
     command: python /petadoption/manage.py runserver 0.0.0.0:8000
+    
     volumes:
       - .:/petadoption
     ports:
@@ -14,12 +15,14 @@ services:
         - POSTGRES_NAME=postgres
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=postgres
+        
+        
    db:
      image: postgres:11
      volumes:
-       - postgres_data:/var/lib/potgresql/data/
+       - postgres_data:/var/lib/postgresql/data/
      environment:
         - POSTGRES_PASSWORD=postgres  
  
 volumes:
-    postgres_data:        
+  postgres_data:        

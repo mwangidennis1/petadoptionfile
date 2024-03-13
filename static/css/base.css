@@ -1,4 +1,22 @@
 h1 {
     color: red;
     }
-  
+  .animal-detail {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.animal-detail img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.animal-details {
+    flex-grow: 1;
+}
+
+.detail-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
