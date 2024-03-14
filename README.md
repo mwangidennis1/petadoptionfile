@@ -8,8 +8,6 @@ To run the project type the following commands:
     
     docker-compose up -d --build
 
-    docker-compose up -d 
-
     docker-compose exec web python manage.py migrate 
 
     docker-compose exec web python manage.py makemigrations
