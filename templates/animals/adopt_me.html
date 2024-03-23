@@ -1,0 +1,44 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}Animals{% endblock title %}
+
+{% block content %}
+<form action="{% url 'adopt_us'  %}" method="post" class="needles-form">
+    {% csrf_token %}
+    <input type="hidden" name="animal_id" value="{{ animal.id }}">
+    <div class="form-group">
+        <label for="adoptFor">Who are you planning to adopt this pet for?</label>
+        {{ form.adoptFor }}
+    </div>
+    <div class="form-group">
+        <label for="caregiver">Who will be the primary caregiver of this pet?</label>
+        {{ form.caregiver }}
+    </div>
+    <div class="form-group"> 
+        <label for="numberofchildren">Number of children at home</label>
+        {{ form.numberofchildren }}
+    </div>
+    <div class="form-group">
+        <label for="allergies">Pet allergies in the family</label>
+        {{ form.allergies }}
+    </div>
+    <div class="form-group">
+        <label for="residence">Type of residence?</label>
+        {{ form.residence }}
+    </div>
+    <div class="form-group">
+        <label for="staydaytime">Where will your pet stay during the day?</label>
+        {{ form.staydaytime }}
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<div id="notification-message" class="hidden">
+    Your form has been submitted successfully!
+</div>
+<style>
+    .hidden{
+        display: none;
+    }
+</style>
+
+{% endblock content %}

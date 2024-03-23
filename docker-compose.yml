@@ -2,7 +2,8 @@ version: '3.7'
 services:
    web:
     build: . 
-    command: python /petadoption/manage.py runserver 0.0.0.0:8000
+    command: gunicorn petadoption_project.wsgi -b 0.0.0.0:8000 
+             
     
     volumes:
       - .:/petadoption

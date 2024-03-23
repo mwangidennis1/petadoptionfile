@@ -16,3 +16,4 @@ RUN pip install pipenv && pipenv install --system
 #Copying my project code
 COPY  . /petadoption/
 
+EXPOSE 8000

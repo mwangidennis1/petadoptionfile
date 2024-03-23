@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+<h1> Successfull submission</h1>
+<p>Your adoption request has been successfully recieved, we will send you a response in your email account,To
+    return back to the pets <a href="{% url 'animal_list' %}">Click here</a>
+</p>
+
+{% endblock content %}

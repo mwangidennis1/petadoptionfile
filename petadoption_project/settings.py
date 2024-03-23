@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ENVIRONMENT = os.environ.get('ENVIRONMENT', default='development')
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +26,7 @@ SECRET_KEY ='_hby^8ja+*tg5ah^vwk5@4(+$b-#uf6rvhjq2sz%qh#q+y-e5u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','*']
 
 
 # Application definition
@@ -140,8 +141,8 @@ STATICFILES_FINDERS = [
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' 
-LOGIN_REDIRECT_URL='home'
-ACCOUNT_LOGOUT_REDIRECT='home'
+LOGIN_REDIRECT_URL='animal_list'
+ACCOUNT_LOGOUT_REDIRECT='animal_list'
 CRISPY_TEMPLATE_PACK='bootstrap4'
 #django-allauth config
 SITE_ID=1

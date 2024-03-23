@@ -18,6 +18,7 @@
         <p>{{ animal.age }}</p>
         <p class="detail-label">Description:</p>
         <p>{{ animal.description }}</p>
+        <p><a href="{% url 'animal_adopt' animal_id=animal.id %}">Adopt Me</a></p>
     </div>
 </div>
 {% endblock content %}
