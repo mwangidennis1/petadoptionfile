@@ -1,4 +1,47 @@
 h1 {
     color: red;
     }
-    
+  .animal-detail {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.animal-detail img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.animal-details {
+    flex-grow: 1;
+}
+
+.detail-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.needles-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+.hidden {
+    display: none; /* Hide the element by default */
+}
