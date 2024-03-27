@@ -2,9 +2,7 @@ version: '3.7'
 services:
    web:
     build: . 
-    command: gunicorn petadoption_project.wsgi -b 0.0.0.0:8000 
-    volumes:
-      - .:/petadoption
+    command: gunicorn petadoption_project.wsgi -b 0.0.0.0:8000
     ports:
       - 8000:8000
     depends_on:
@@ -15,11 +13,4 @@ services:
         
    db:
      image: postgres:11
-     volumes:
-       - postgres_data:/var/lib/postgresql/data/
-     environment:
-        - POSTGRES_PASSWORD=postgres  
- 
-volumes:
-  postgres_data:  
-      
+    
