@@ -3,8 +3,6 @@ services:
    web:
     build: . 
     command: gunicorn petadoption_project.wsgi -b 0.0.0.0:8000 
-             
-    
     volumes:
       - .:/petadoption
     ports:
@@ -12,7 +10,7 @@ services:
     depends_on:
       - db
     environment: # env variables
-        - ENVIRONMENT = development
+        - ENVIRONMENT = production
         - POSTGRES_NAME=postgres
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=postgres
