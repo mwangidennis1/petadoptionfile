@@ -10,11 +10,8 @@ services:
     depends_on:
       - db
     environment: # env variables
-        - ENVIRONMENT = production
-        - POSTGRES_NAME=postgres
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=postgres
-
+        - ENVIRONMENT=production
+        
         
    db:
      image: postgres:11
