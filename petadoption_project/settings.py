@@ -26,7 +26,7 @@ SECRET_KEY ='_hby^8ja+*tg5ah^vwk5@4(+$b-#uf6rvhjq2sz%qh#q+y-e5u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','*','.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','*','stark-brook-64743-2376cd8a301d.herokuapp.com']
 
 
 # Application definition
@@ -179,6 +179,7 @@ if ENVIRONMENT == 'production':
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True 
     CSRF_COOKIE_SECURE = True 
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
