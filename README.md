@@ -35,6 +35,3 @@ To stop the program from running enter the following command:
      docker-compose down
 ```
 
-## images
-![homepage](C:\Users\Lenovo\Pictures\pethome.JPG)
-
