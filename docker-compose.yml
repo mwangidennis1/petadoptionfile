@@ -2,7 +2,7 @@ version: '3.7'
 services:
    web:
     build: . 
-    command: gunicorn petadoption_project.wsgi -b 0.0.0.0:8000 
+    command: python /petadoption/manage.py runserver  0.0.0.0:8000 
              
     
     volumes:
@@ -12,7 +12,7 @@ services:
     depends_on:
       - db
     environment: # env variables
-        - ENVIRONMENT = development
+        - ENVIRONMENT=development
         - POSTGRES_NAME=postgres
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=postgres

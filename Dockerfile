@@ -10,8 +10,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /petadoption
 
 #installing my dependancies
-COPY Pipfile Pipfile.lock /petadoption/
-RUN pip install pipenv && pipenv install --system
+COPY requirements.txt /petadoption/
+RUN pip install  --upgrade pip && pip install  -r requirements.txt 
 
 #Copying my project code
 COPY  . /petadoption/
